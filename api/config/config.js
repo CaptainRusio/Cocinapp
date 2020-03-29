@@ -5,6 +5,7 @@ const config = {
     "database": "cocinapp",
     "host": "127.0.0.1",
     "dialect": "postgres",
+    "password":"123"
   },
   "test": {
     "database": "cocinaapp_test",
