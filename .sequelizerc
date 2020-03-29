@@ -4,5 +4,5 @@ module.exports = {
   config: path.resolve('./api/config', 'config.js'),
   'migrations-path': path.join(__dirname, '/api/migrations'),
   'seeders-path': path.join(__dirname, '/api/seeders'),
-  'models-path': path.join(__dirname, '/api/model'),
+  'models-path': path.join(__dirname, '/api/models'),
 }
