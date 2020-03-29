@@ -1,0 +1,44 @@
+{
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "./node_modules/.bin/babel -d ./build ./api -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js",
+    "heroku-prebuild": "npm i --prefix web_client && npm i && npm i @babel/cli --save",
+    "dev": "nodemon api/index.js --exec babel-node api/index.js",
+    "heroku-postbuild": "npm run build --prefix web_client",
+    "test": "cd api && mocha --require @babel/register"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
+    "dotenv-cli": "^2.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "formidable": "^1.2.1",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.11.0",
+    "sequelize": "^5.18.4",
+    "sequelize-cli": "^5.5.1",
+    "xlsx": "^0.14.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1"
+  }
+}

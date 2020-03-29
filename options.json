@@ -1,0 +1,4 @@
+{
+  "migrations-path": "api/migrations",
+  "models-path": "api/models"
+}
